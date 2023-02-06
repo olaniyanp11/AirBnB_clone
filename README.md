@@ -1,7 +1,9 @@
-#AirBnB Clone Project
+# AirBnB Clone Project
 
-#Project Description
+# Project Description
 
-#Authors:
-1. Aso Orji
-2. Olaniyan Pelumi
+# Resources
+
+# Authors
+1. [Aso Orji](ndubuisiaso@gmail.com)
+2. [Olaniyan Pelumi](olaniyanp11@gmail.com)
