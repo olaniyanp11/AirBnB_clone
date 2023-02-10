@@ -4,7 +4,13 @@
 """
 import datetime
 import unittest
-from ..test_models models.Basemodel import BaseModel
+import sys
+
+# add two directories back to the sys.path list
+sys.path.append("..")
+sys.path.append("..")
+
+from models.Basemodel import BaseModel
 
 
 class TestDatetimeISOFormat(unittest.TestCase):
