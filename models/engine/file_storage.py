@@ -4,7 +4,7 @@
     to a JSON file and deserializes JSON file to instances:
 """
 import json
-from models import base_model
+from models.base_model import BaseModel
 
 
 class FileStorage():
@@ -40,7 +40,7 @@ class FileStorage():
                 for val in load_obj.values():
                     clas = val["__class__"]
                     del val["__class__"]
-                    self.new(eval(f"base_model.{clas}")(**val))
+                    self.new(eval(f"{clas}")(**val))
 
         except FileNotFoundError:
             return
