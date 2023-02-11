@@ -48,7 +48,7 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """returns a dictionary containing all keys-values of __dict__"""
+        """returns a copy of a dictionary containing all keys-values of __dict__"""
 
         class_dict = self.__dict__.copy()
         class_dict["__class__"] = type(self).__name__
