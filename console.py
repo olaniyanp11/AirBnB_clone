@@ -87,47 +87,6 @@ class HBNBCommand(cmd.Cmd):
             del storage.all()[f"{args[0]}.{args[1]}"]
         storage.save()
 
-    def do_update(self, arg):
-        """ Updates an instance based on the class
-            name and id by adding or updating attribute
-            Usage: update <class name> <id>
-            <attr name> "<attr value>"
-        """
-        args = arg.split()
-
-        if len(args) == 0:
-            print("** class name missing **")
-        elif args[0] not in self.__classes:
-            print("** class doesn't exist **")
-        elif len(args) == 1:
-            print("** instance id missing **")
-        elif f"{args[0]}.{args[1]}" not in storage.all():
-            print("** no instance found **")
-        elif len(args) == 2:
-            print("** attribute name missing **")
-        elif len(args) == 3:
-            print("** value missing **")
-        else:
-            obj_class = args[0]
-            obj_id = args[1]
-            obj_key = obj_class + "." + obj_id
-            obj = storage.all()[obj_key]
-
-            attr_name = args[2]
-            attr_value = args[3]
-
-            if attr_value[0] == '"':
-                attr_value = attr_value[1:-1]
-
-            if hasattr(obj, attr_name):
-                type_ = type(getattr(obj, attr_name))
-                if type_ in [str, float, int]:
-                    attr_value = type_(attr_value)
-                    setattr(obj, attr_name, attr_value)
-            else:
-                setattr(obj, attr_name, attr_value)
-            storage.save()
-
     def do_all(self, arg):
         """
          Prints all string representation
