@@ -25,8 +25,7 @@ class BaseModel:
         if len(kwargs) != 0:
             for key in kwargs:
                 if key == "created_at" or key == "updated_at":
-                    self.__dict__[key] = datetime.strptime(
-                            kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
+                     self.__dict__[key] = datetime.fromisoformat(value)
                 else:
                     self.__dict__[key] = kwargs[key]
         else:
@@ -51,7 +50,7 @@ class BaseModel:
         """returns a copy of a dictionary containing all keys-values of __dict__"""
 
         class_dict = self.__dict__.copy()
-        class_dict["__class__"] = type(self).__name__
+        class_dict["__class__"] = self.__class__.__name__
         class_dict["created_at"] = class_dict["created_at"].isoformat()
         class_dict["updated_at"] = class_dict["updated_at"].isoformat()
         return class_dict
