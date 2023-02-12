@@ -4,15 +4,25 @@
     entry point of the command interpreter
 """
 import cmd
+import re
 from models.base_model import BaseModel
 from models import storage
-from models import user
-import re
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    __classes = ['BaseModel']
+    __classes = ['BaseModel',
+            "User",
+            "Amenity",
+            "Place",
+            "Review"
+            ]
 
     def do_quit(self, lone):
         """
@@ -75,7 +85,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             del storage.all()[f"{args[0]}.{args[1]}"]
-            storage.save()
+        storage.save()
 
     def do_update(self, arg):
         """ Updates an instance based on the class
