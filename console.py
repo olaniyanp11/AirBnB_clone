@@ -71,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(storage.all()[f"{args[0]}.{args[1]}"])
 
-    def do_destroy(self, line):
+    def do_destroy(self, arg):
         """Destroys an instance
         """
         args = arg.split()
