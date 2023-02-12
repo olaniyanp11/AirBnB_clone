@@ -4,7 +4,7 @@
 """
 import cmd
 from models.base_model import BaseModel
-
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
@@ -135,6 +135,27 @@ class HBNBCommand(cmd.Cmd):
                 setattr(storage.all()[key], attribute, value)
                 storage.all()[key].save()
 
+    def update_dict(self, classname, uid, s_dict):
+        """Helper method for update() with a dictionary."""
+        s = s_dict.replace("'", '"')
+        d = json.loads(s)
+        if not classname:
+            print("** class name missing **")
+        elif classname not in storage.classes():
+            print("** class doesn't exist **")
+        elif uid is None:
+            print("** instance id missing **")
+        else:
+            key = "{}.{}".format(classname, uid)
+            if key not in storage.all():
+                print("** no instance found **")
+            else:
+                attributes = storage.attributes()[classname]
+                for attribute, value in d.items():
+                    if attribute in attributes:
+                        value = attributes[attribute](value)
+                    setattr(storage.all()[key], attribute, value)
+                storage.all()[key].save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
