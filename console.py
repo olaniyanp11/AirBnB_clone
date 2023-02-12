@@ -5,6 +5,7 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models import user
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
