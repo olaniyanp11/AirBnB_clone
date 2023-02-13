@@ -8,10 +8,22 @@
 <li> A database or files that store data (data = objects)</li> 
 <li> An API that provides a communication int</li> 
   </ul>
-
+#################################################################################################################################################
 # Resources
+Read or watch:
 
+### cmd module
+### cmd module in depth
+### packages concept page
+### uuid module
+### datetime
+### unittest module
+### args/kwargs
+### Python test cheatsheet
+### cmd module wiki page
+### python unittest
 # Authors!
+#################################################################################################################################################
 
-1. [Aso Orji](ndubuisiaso@gmail.com)
-2. [Olaniyan Pelumi](olaniyanp11@gmail.com)
+## [Aso Orji](ndubuisiaso@gmail.com)
+## [Olaniyan Pelumi](olaniyanp11@gmail.com)
