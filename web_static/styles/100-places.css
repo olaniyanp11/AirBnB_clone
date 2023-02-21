@@ -2,7 +2,9 @@
     display: flex;
     text-align: center;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .places article {
@@ -192,7 +194,6 @@ article .amenities {
     height: 50%;
     background-repeat: no-repeat;
     background-position: left;
-    width: 100%;
     padding-left: 50px;
     display: flex;
     margin-left: -40px;
@@ -201,6 +202,8 @@ article .amenities {
     font-size: 18px;
     ;
 }
+
+
 
 .review_head {
     text-align: left;
@@ -220,6 +223,7 @@ article .amenities {
     margin-top: 50px;
     padding: 0%;
 }
-.review p{
+
+.review p {
     display: inline;
 }
